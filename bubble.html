@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event Buble vai</h1>
+    <section id="section-item">
+        <h1>Buble vai List</h1>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Neque, cupiditate?</li>
+            <li class="item">Ipsam, reprehenderit!</li>
+            <li class="item">Cum, id?</li>
+            <li class="item">Iure, quasi?</li>
+            <li class="item">Nisi, porro.</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('second-item').addEventListener('click',function(event){
+            console.log('click the list')
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+        })
+        // ul
+        document.getElementById('list-container').addEventListener('click',function(){
+            console.log('UL click the list')
+        })
+        // section
+        document.getElementById('section-item').addEventListener('click',function(){
+            console.log('section item click ')
+        })
+    </script>
+</body>
+</html>
