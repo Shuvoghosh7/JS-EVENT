@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment</title>
+</head>
+<body>
+    <section>
+        <div id="parentsContainer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem at quam nesciunt eos adipisci reprehenderit molestias sequi minima. Rerum fugiat provident libero reprehenderit error omnis similique blanditiis, iure quis rem.</p>
+            
+        </div>
+        <div>
+            <textarea name="" id="userCommentArea" cols="60" rows="10"></textarea>
+            <br>
+            <button id="submit-comment-button">Add new comment</button>
+        </div>
+    </section>
+
+
+    <script>
+      // 1 add button even handelar
+      document.getElementById('submit-comment-button').addEventListener('click',function(){
+       //2  get user comment area
+       const userNewComment = document.getElementById('userCommentArea');
+       const userComment = userNewComment.value
+      /*  console.log(userNewComment.value); */
+       //3 create new element for add text area comment
+       const newElement = document.createElement('p')
+       newElement.innerText=userComment;
+       //4 append new element as a child in paraents
+       const addNewChild = document.getElementById('parentsContainer');
+       addNewChild.appendChild(newElement);
+      })
+    </script>
+</body>
+</html>
