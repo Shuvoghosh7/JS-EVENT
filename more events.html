@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+
+</head>
+<body>
+    <h2>More Events</h2>
+    <section>
+        <h1 id="serict-info">very very improtent information</h1>
+        <input id="delet-focus" type="text" placeholder="type delete">
+        <button id="delet-btn" disabled>delete</button>
+    </section>
+
+
+    <script>
+        document.getElementById('delet-btn').addEventListener('click',function(){
+        //click delet-btn then delet h3 tag
+        document.getElementById('serict-info').style.display='none';
+        
+        })
+        // focus even handeler
+        document.getElementById('delet-focus').addEventListener('focus',function(){
+        document.body.style.backgroundColor='lightcoral'
+        })
+        // blur even handeler
+        document.getElementById('delet-focus').addEventListener('blur',function(){
+            document.body.style.backgroundColor='white'
+        })
+     /*    // keydown
+        document.getElementById('delet-focus').addEventListener('keydown',function(){
+           const deletFild = document.getElementById('delet-focus')
+            console.log(deletFild.value);
+        }) */
+        // keyup
+        document.getElementById('delet-focus').addEventListener('keyup',function(event){
+           const deletBtn = document.getElementById('delet-btn');
+           if(event.target.value == 'delete'){
+               deletBtn.removeAttribute('disabled');
+           }else{
+               deletBtn.setAttribute('disabled',true)
+           }
+
+           
+        })
+        // change
+        document.getElementById('delet-focus').addEventListener('change',function(){
+           const deletFild = document.getElementById('delet-focus')
+            console.log(deletFild.value);
+        })
+    </script>
+</body>
+</html>
